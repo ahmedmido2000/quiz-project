@@ -1,0 +1,157 @@
+@import 'sass/global-rules';
+
+* {
+	margin: 0;
+	padding: 0;
+	scroll-behavior: smooth;
+	font-family: sans-serif;
+}
+
+body {
+	background: $main-color;
+}
+
+header {
+	@extend %flex-center;
+	background: white;
+	padding: 15px;
+	margin-bottom: 20px;
+
+	img {
+		width: 70px;
+		border-radius: 50%;
+	}
+}
+
+.video {
+	width: 95%;
+	margin: 10px auto;
+	background: white;
+	padding: 20px;
+
+	video {
+		width: 100%;
+		display: block;
+	}
+}
+
+.start-btn-container {
+	background: white;
+	padding: 10px;
+
+	a {
+		@extend %flex-center;
+		text-decoration: none;
+		color: $color;
+		background: $main-color;
+		width: 85%;
+		margin: 0 auto;
+		font-size: 20px;
+		text-transform: uppercase;
+		font-weight: bold;
+		transition: 0.3s;
+		border-radius: 10px;
+		padding: 10px;
+		border: 2px solid $main-color;
+
+		&:hover {
+			background: transparent;
+			color: $main-color;
+		}
+	}
+}
+
+.test {
+	margin: 10px;
+	background: white;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px;
+
+	.quiz-type h2 {
+		font-size: 30px;
+		font-weight: bold;
+		color: $secondry-color;
+	}
+
+	.questions {
+		width: 90%;
+
+		> div {
+			background: $main-color;
+			padding: 10px;
+			margin: 10px;
+			font-size: 20px;
+
+			.exercise {
+				font-weight: bold;
+			}
+
+			ul {
+				list-style: none;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				margin: 10px;
+
+				li {
+					background: white;
+					padding: 10px;
+					display: flex;
+					align-items: center;
+					margin: 10px 0;
+
+					input {
+						-webkit-appearance: none;
+						position: relative;
+						width: 20px;
+						height: 20px;
+						border: 2px solid #777;
+						margin-right: 10px;
+
+						&::before {
+							content: '';
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							transform: translate(-50%, -50%);
+							background: transparent;
+							width: 65%;
+							height: 65%;
+							transition: 0.3s;
+						}
+
+						&:not(:checked):hover::before {
+							background: #777;
+							opacity: 0.4;
+						}
+
+						&:checked::before {
+							background: #777;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	.confirm {
+		width: 50%;
+		margin: 10px auto;
+		@extend %flex-center;
+		background: #0b0;
+		padding: 10px;
+		border-radius: 10px;
+		font-size: 20px;
+		color: #fff;
+		cursor: pointer;
+		border: 2px solid #0b0;
+		transition: 0.3s;
+
+		&:hover {
+			background: transparent;
+			color: #0b0;
+		}
+	}
+}
